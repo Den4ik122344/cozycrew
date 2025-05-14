@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CozyCrew - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="header-bar" role="banner">
+    <div class="header-left">
+      <span>Follow us:</span>
+      <a href="https://facebook.com/profile.php?id=61575519134304" target="_blank" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook" loading="lazy" style="height:24px;width:24px;" /></a>
+      <a href="https://instagram.com/cozycrewla" target="_blank" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram" loading="lazy" style="height:24px;width:24px;" /></a>
+      <div class="contact-info">
+        <a style="color: #00ffc8cb !important;" href="tel:+1(862)2938895" aria-label="Call us">📞+1(862)2938895</a>
+        <a style="color: #00ffc8cc !important;" href="mailto:cozycrew.la@gmail.com" aria-label="Email us">✉️cozycrew.la@gmail.com</a>
+      </div>
+    </div>
+    <a href="index.html" class="logo-link" aria-label="Homepage"><img src="images/logo.jpg" alt="CozyCrew Logo" class="logo" loading="lazy" /></a>
+    <input type="checkbox" id="burger-toggle" class="visually-hidden">
+    <label for="burger-toggle" class="burger-icon" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <nav class="header-right" role="navigation">
+      <ul class="nav">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#services-section">Our Services</a></li>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="menu-overlay"></div>
+  </header>
+  <main style="margin-left:2rem;">
+    <section id="home" class="hero scroll-reveal">
+      <div class="hero-inner">
+        <div class="booking-card">
+          <h3 class="card-title">Book Your Service</h3>
+          <form id="booking-form" class="booking-form" action="https://formspree.io/f/xovdjwve" method="POST">
+            <div class="form-group"><label for="name">Name</label><input id="name" name="user_name" type="text" placeholder="Your full name" required/></div>
+            <div class="form-group"><label for="phone">Phone</label><input id="phone" name="user_phone" type="tel" placeholder="(000)0000000" required/></div>
+            <div class="form-group"><label for="email">Email</label><input id="email" name="user_email" type="email" placeholder="you@example.com" required/></div>
+            <div class="form-group"><label for="date">Preferred Date</label><input id="date" name="date" type="text" placeholder="Select a date" required autocomplete="off"/></div>
+            <div class="form-group full-width"><label for="job">Tell us about your job</label><textarea id="job" name="job_description" rows="4" placeholder="Describe your job request" required ></textarea></div>
+            <button type="submit" class="booking-btn send-btn">Send</button>
+          </form>
+        </div>
+        <div class="hero-text">
+          <div class="text-wrapper">
+            <h1>Eliminate Home Maintenance Stress Forever</h1>
+            <p><strong>Expert handyman & cleaning services in Los Angeles. One call — and your space is clean, fixed, and stress-free.</strong></p>
+            <ul class="features">
+              <li>Professional handyman & cleaners</li>
+              <li>Affordable hourly pricing</li>
+              <li>Eco-friendly cleaning options</li>
+              <li>Serving LA & nearby areas</li>
+              <li>Guaranteed Quality </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="testimonials">
+      <h2> Why Choose Us</h2>
+      <div class="testimonial-wrapper">
+        <button class="carousel-btn prev-btn" aria-label="Previous testimonials">‹</button>
+        <div class="testimonials-container" role="region" aria-label="Customer testimonials carousel">
+          <div class="testimonial-card" tabindex="0">
+            <div class="meta">
+              <img src="https://i.pravatar.cc/50?img=10" alt="Anna K." class="author-img" loading="lazy">
+              <div>
+                <strong class="author-name">Anna K.</strong>
+                <div class="date">April 24</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="quote">I’m so glad I found these guys! We got a light-up desk for our kid, but the bed she wanted didn’t have any lighting. She was really upset, but when I mentioned it, Artem said he could add the lighting himself and he did!Thank you so much, my child is happy!</p>
+            <div class="verified">Verified</div>
+            <div class="attachments">
+              <img src="images/foto5.jpg" data-full-src="images/foto5.jpg" class="thumb-icon" alt="Photo1" loading="lazy">
+              <img src="images/foto6.jpg" data-full-src="images/foto6.jpg" class="thumb-icon" alt="Photo2" loading="lazy">
+            </div>
+          </div>
+          <div class="testimonial-card" tabindex="0">
+            <div class="meta">
+              <img src="https://i.pravatar.cc/50?img=33" alt="Alex B." class="author-img" loading="lazy">
+              <div><strong class="author-name">Tony T.</strong>
+                <div class="date">April 12</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="quote">I rent out my place on Airbnb and now I always use CozyCrew. If I need a quick cleaning before guests arrive — cleaners show up. If something breaks — I can call a handyman right away. Super convenient for anyone who hosts.</p>
+            <div class="verified">Verified</div>
+          </div>
+          <div class="testimonial-card" tabindex="0">
+            <div class="meta">
+              <img src="https://i.pravatar.cc/50?img=12" alt="Brandon H." class="author-img" loading="lazy">
+              <div>
+                <strong class="author-name">Brandon H.</strong>
+                <div class="date">March 15</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="quote">I'm glad I found Artem on Thumbtack; he completed various handyman projects for me at home including furniture assembly of a new dresser and a chair, installing closet shelves, a washing machine, and new locks for the front and back. He arrived right on time, his price was good, and everything turned out great. He was professional and I plan to hire again, recommended !</p>
+            <div class="verified">Verified</div>
+            <div class="attachments">
+              <img src="images/foto1.jpg" data-full-src="images/foto1.jpg" class="thumb-icon" alt="Photo1" loading="lazy">
+              <img src="images/foto2.jpg" data-full-src="images/foto2.jpg" class="thumb-icon" alt="Photo2" loading="lazy">
+              <img src="images/foto3.jpg" data-full-src="images/foto3.jpg" class="thumb-icon" alt="Photo3" loading="lazy">
+            </div>
+          </div>
+          <div class="testimonial-card" tabindex="0">
+            <div class="meta">
+              <img src="https://i.pravatar.cc/50?img=23" alt="Erin P." class="author-img" loading="lazy">
+              <div>
+                <strong class="author-name">Erin P.</strong>
+                <div class="date">March 21</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <div class="verified">Verified</div>
+            <p class="quote">Amazing work! Thank you so much for helping us to get through the homestretch of assembling outdoor furniture/ raised beds following the fire. It was a huge help, and our yard is finally complete. Strong work ethic, punctual, honest, great value, hard worker. Much appreciated!! Highly recommend!!</p>
+          </div>
+          <div class="testimonial-card" tabindex="0">
+            <div class="meta">
+              <img src="https://i.pravatar.cc/50?img=24" alt="Margaret R." class="author-img" loading="lazy">
+              <div><strong class="author-name">Margaret R.</strong>
+                <div class="date">February 27</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="quote">I was very pleased with his work. I would hire him again. I would also recommend him to others.</p>
+            <div class="verified">Verified</div>
+            <div class="attachments">
+              <img src="images/foto7.jpg" data-full-src="images/foto7.jpg" class="thumb-icon" alt="Photo1" loading="lazy">
+              <img src="images/foto8.jpg" data-full-src="images/foto8.jpg" class="thumb-icon" alt="Photo2" loading="lazy">
+            </div>
+          </div>
+          <div class="testimonial-card" tabindex="0">
+            <div class="meta">
+              <img src="https://i.pravatar.cc/50?img=18" alt="Tom R." class="author-img" loading="lazy">
+              <div>
+                <strong class="author-name">Tom R.</strong>
+                <div class="date">Janyary 19</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="quote">He was very responsive and did excellent quality work for a reasonable price. He even purchased a special tool for our job. Great experience and will definitely be using him again!</p>
+            <div class="verified">Verified</div>
+          </div>
+          <div class="testimonial-card" tabindex="0">
+            <div class="meta">
+              <img src="https://i.pravatar.cc/50?img=25" alt="Laura W." class="author-img" loading="lazy">
+              <div><strong class="author-name">Laura W.</strong>
+                <div class="date">Decenber 12, 2024</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="quote">Tim was on time and worked hard the whole time. He even helped me moved my desk out of the garage first.</p>
+            <div class="verified">Verified</div>
+          </div>
+          <div class="testimonial-card" tabindex="0">
+            <div class="meta">
+              <img src="https://i.pravatar.cc/50?img=26" alt="Amira A." class="author-img" loading="lazy">
+              <div><strong class="author-name">Amira A.</strong>
+                <div class="date">November 15, 2024</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="quote">Tim was a pleasure to work with. He finished the job very quickly and to a high standard.</p>
+            <div class="verified">Verified</div>
+            <div class="attachments">
+              <img src="images/foto4.jpg" data-full-src="images/foto4.jpg" class="thumb-icon" alt="Photo1" loading="lazy">
+            </div>
+          </div>
+          <div class="testimonial-card" tabindex="0">
+            <div class="meta">
+              <img src="https://i.pravatar.cc/50?img=16" alt="Vanessa M." class="author-img" loading="lazy">
+              <div><strong class="author-name">Vanessa M.</strong>
+                <div class="date">October 22, 2024</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="quote">Work was done quality.</p>
+            <div class="verified">Verified</div>
+          </div>
+          <div class="testimonial-card" tabindex="0">
+            <div class="meta">
+              <img src="https://i.pravatar.cc/50?img=17" alt="Alex B." class="author-img" loading="lazy">
+              <div><strong class="author-name">Alex B.</strong>
+                <div class="date">October 20, 2024</div>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="quote">Fantastic service! Arrived early, worked efficiently, and left everything spotless. Highly recommend!</p>
+            <div class="verified">Verified</div>
+          </div>
+        </div>
+        <button class="carousel-btn next-btn" aria-label="Next testimonials">›</button>
+      </div>
+    </section>
+    <section class="scroll-reveal" id="services-section">
+      <h2 class="section-title" style="text-align: center; color: #ffd700!important;">Our Services</h2>
+      <div style="display: flex; justify-content: space-between; gap: 2rem;">
+        <div style="flex: 1;">
+          <h3 style="text-align: center;">HANDYMAN</h3>
+          <div class="cards" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+            <div class="card" data-tooltip="  We offer comprehensive furniture assembly services for all brands: IKEA, Amazon, Uplift, Wayfair, Home Depot and more.
+            
+   **Please note:** we do not provide moving services. If you need to relocate heavy items, please notify us in advance.">
+              Furniture Assembly
+            </div>
+            <div class="card" data-tooltip="   Our team expertly mounts TVs, shelves, mirrors, curtain rods and decorative accents
+   **For work at heights above 10 feet, please notify us in advance. ">Wall Mounting</div>
+            <div class="card" data-tooltip="   We handle the full cycle of installation for cabinets, sheds, gazebos, children’s playsets, and sports equipment. 
+   **Please note:** we do not provide welding or concrete work services.">Installation</div>
+            <div class="card" data-tooltip="   We install lighting fixtures, ceiling fans, outlets, switches, dimmers, sensors and other electrical components. 
+   **For work at heights above 10 feet, please notify us in advance.">Electrical Work</div>
+            <div class="card" data-tooltip="   We specialize in the most common household plumbing needs—repairing leaks, clearing clogs, replacing faucets and water filters, and performing minor pipe repairs—so you can avoid costly damage and enjoy trouble-free plumbing.">Plumbing</div>
+            <div class="card" data-tooltip="   Whether it’s adjusting doors and windows, patching and painting drywall, replacing locks or re-caulking seals, our handyman services cover all essential fixes that keep your home looking and working at its best.">General repairs</div>
+          </div>
+        </div>
+        <div style="flex: 1;">
+          <h3 style="text-align: center;">CLEANING</h3>
+          <div class="cards" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+            <div class="card" data-tooltip="Standard Cleaning
+  Regular cleaning to maintain cleanliness and comfort in your home. Includes:
+  • Dusting accessible surfaces  
+  • Wiping the exterior of kitchen appliances and cabinets  
+  • Basic cleaning of bathrooms  
+  • Vacuuming and mopping floors">
+              Standard home cleaning
+            </div>
+            <div class="card" data-tooltip="Deep Cleaning
+  Thorough cleaning of all areas, including hard-to-reach places. Includes:
+ 
+  • Cleaning grout lines and removing stubborn stains  
+  • Cleaning behind and under furniture and appliances  
+  • Disinfecting frequently touched surfaces  
+  • Additional services (upon request)">
+              Deep cleaning</div>
+            <div class="card" data-tooltip="Move-in/Move-out Cleaning
+  Comprehensive cleaning before move-in or after move-out. Includes:
+ 
+  • Cleaning all surfaces, including walls and ceilings  
+  • Washing windows and mirrors  
+  • Cleaning inside cabinets and drawers  
+  • Removal of construction dust and debris (if necessary)">
+              Move-in / Move-out cleaning
+            </div>
+            <div class="card" data-tooltip="Office and Commercial Cleaning
+  Professional cleaning of workspaces to maintain cleanliness and hygiene. Includes:
+
+  • Cleaning desks and common areas  
+  • Disinfecting restrooms and kitchen areas  
+  • Trash removal and replacing trash bags  
+  • Washing windows and glass partitions (upon request)">
+              Office & commercial spaces
+            </div>
+            <div class="card" data-tooltip="Post-Renovation Cleaning
+  Specialized cleaning after construction and renovation work. Includes:
+
+  • Removal of construction dust and leftover materials  
+  • Cleaning all surfaces from debris  
+  • Washing windows, doors, and other glass surfaces  
+  • Preparing the space for use">
+              Post-renovation cleaning
+            </div>
+            <div class="card" data-tooltip="Eco-friendly Cleaning
+     Cleaning using safe and environmentally-friendly products. Includes:
+
+  • Use of certified eco-friendly cleaning agents  
+  • Use of reusable and biodegradable materials  
+  • Minimizing the use of harsh chemicals  
+  • Maintaining a healthy atmosphere indoors">
+              Eco-friendly options
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pricing Buttons -->
+      <div class="services-pricing-buttons">
+        <button id="open-handyman-prices" class="pricing-btn">Handyman Pricing</button>
+        <button id="open-cleaning-prices" class="pricing-btn">Cleaning Pricing</button>
+      </div>
+    </section>
+    <!-- Draggable Gallery Section -->
+    <section id="dual-gallery" class="scroll-reveal" style="margin: 2rem 0;">
+      <div class="galleries-container">
+        <!-- Левая галерея (существующие фото) -->
+        <div class="gallery gallery-left">
+          <h3 class="visually-hidden">Gallery Left</h3>
+          <img src="images/gallery1.jpg" alt="Gallery Image 1">
+          <img src="images/gallery2.jpg" alt="Gallery Image 2">
+          <img src="images/gallery3.jpg" alt="Gallery Image 3">
+          <img src="images/gallery4.jpg" alt="Gallery Image 4">
+          <img src="images/gallery5.jpg" alt="Gallery Image 5">
+          <img src="images/gallery6.jpg" alt="Gallery Image 6">
+          <img src="images/gallery7.jpg" alt="Gallery Image 7">
+          <img src="images/gallery8.jpg" alt="Gallery Image 8">
+          <img src="images/gallery9.jpg" alt="Gallery Image 9">
+          <img src="images/gallery10.jpg" alt="Gallery Image 10">
+          <img src="images/gallery21.jpg" alt="Gallery Image 20">
+          <img src="images/gallery22.jpg" alt="Gallery Image 20">
+        </div>
+        <!-- Правая галерея (новые фото) -->
+        <div class="gallery gallery-right">
+          <h3 class="visually-hidden">Gallery Right</h3>
+          <img src="images/gallery11.jpg" alt="Gallery Image 11">
+          <img src="images/gallery12.jpg" alt="Gallery Image 12">
+          <img src="images/gallery13.jpg" alt="Gallery Image 13">
+          <img src="images/gallery14.jpg" alt="Gallery Image 14">
+          <img src="images/gallery15.jpg" alt="Gallery Image 15">
+          <img src="images/gallery16.jpg" alt="Gallery Image 16">
+          <img src="images/gallery17.jpg" alt="Gallery Image 17">
+          <img src="images/gallery18.jpg" alt="Gallery Image 18">
+          <img src="images/gallery19.jpg" alt="Gallery Image 19">
+          <img src="images/gallery20.jpg" alt="Gallery Image 20">
+        </div>
+    </section>
+  </main>
+  <section id="about-us" class="scroll-reveal">
+    <div class="about-wrapper">
+      <img src="images/COZY CREW at Work.png" alt="CozyCrew Team at Work">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>At CozyCrew, we’ve put together a team of reliable handymen and hardworking cleaners to make home maintenance easy for you. Whether it’s fixing a loose shelf or giving your whole place a deep clean, we’re here to help — quickly and professionally. </p>
+        <p>We’re based in Los Angeles and always show up on time, do the job right, and treat your home with care. Our goal is simple: take the stress out of repairs and cleaning, so you can relax and enjoy your home.</p>
+      </div>
+    </div>
+  </section>
+  <div style="text-align:center; margin-top:1.5rem;">
+    <a href="index.html" class="cta-button">Get a Free Quote</a>
+  </div>
+  <section id="contact">
+    <div class="booking-info-card">
+      <h3>Contact Info</h3>
+      <ul class="info-list">
+        <li><i class="fas fa-phone"></i><a href="tel:+18622938895">(862) 293-8895</a></li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:info@cozycrew.com">cozycrew.la@gmai.com</a></li>
+        <li><i class="fas fa-map-marker-alt"></i>807 N Hudson AVE, <br>Los Angeles, CA</li>
+        <li><i class="fas fa-clock"></i>Cleaning: <br> Mon–Fr, 8 AM – 5 PM <br> Handyman:<br> Mon-San, 8 AM - 8 PM</li>
+      </ul>
+      <div class="follow-section">
+        <span class="follow-label">Follow us</span>
+        <a href="https://facebook.com/profile.php?id=61575519134304" target="_blank" aria-label="Facebook" class="icon-btn">
+          <img src="images/facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://instagram.com/cozycrewla" target="_blank" aria-label="Instagram" class="icon-btn">
+          <img src="images/instagram.png" alt="Instagram" />
+        </a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 CozyCrew. All rights reserved.</p>
+  </footer>
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-prev" id="lightbox-prev">&#10094;</button>
+    <img id="lightbox-img" src="" alt="Full Size" />
+    <button class="lightbox-next" id="lightbox-next">&#10095;</button>
+    <span class="close-btn" id="lightbox-close">&times;</span>
+  </div>
+  <!-- Dual-gallery lightbox -->
+  <div class="lightbox-overlay" id="dual-lightbox">
+    <button class="lightbox-prev" id="dual-lightbox-prev">&#10094;</button>
+    <img id="dual-lightbox-img" src="" alt="Full Size" />
+    <button class="lightbox-next" id="dual-lightbox-next">&#10095;</button>
+    <span class="close-btn" id="dual-lightbox-close">&times;</span>
+  </div>
+  <script src="script.js"></script>
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://unpkg.com/imask"></script>
+  <script>
+    (function() {
+      const gallery = document.querySelector('.gallery-right');
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      gallery.addEventListener('mousedown', (e) => {
+        isDown = true;
+        gallery.classList.add('active');
+        startX = e.pageX - gallery.offsetLeft;
+        scrollLeft = gallery.scrollLeft;
+      });
+
+      gallery.addEventListener('mouseleave', () => {
+        isDown = false;
+        gallery.classList.remove('active');
+      });
+
+      gallery.addEventListener('mouseup', () => {
+        isDown = false;
+        gallery.classList.remove('active');
+      });
+
+      gallery.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - gallery.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        gallery.scrollLeft = scrollLeft - walk;
+      });
+    })();
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const galleryLinks = Array.from(document.querySelectorAll('#dual-gallery .gallery img'));
+      const dualOverlay = document.getElementById('dual-lightbox');
+      const dualImg = document.getElementById('dual-lightbox-img');
+      const dualPrev = document.getElementById('dual-lightbox-prev');
+      const dualNext = document.getElementById('dual-lightbox-next');
+      const dualClose = document.getElementById('dual-lightbox-close');
+      let dualIndex = 0;
+
+      galleryLinks.forEach((img, index) => {
+        img.addEventListener('click', () => {
+          dualIndex = index;
+          dualImg.src = img.src;
+          dualOverlay.classList.add('active');
+        });
+      });
+
+      dualPrev.addEventListener('click', () => {
+        dualIndex = (dualIndex - 1 + galleryLinks.length) % galleryLinks.length;
+        dualImg.src = galleryLinks[dualIndex].src;
+      });
+
+      dualNext.addEventListener('click', () => {
+        dualIndex = (dualIndex + 1) % galleryLinks.length;
+        dualImg.src = galleryLinks[dualIndex].src;
+      });
+
+      dualClose.addEventListener('click', () => dualOverlay.classList.remove('active'));
+      dualOverlay.addEventListener('click', (e) => {
+        if (e.target === dualOverlay) {
+          dualOverlay.classList.remove('active');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!dualOverlay.classList.contains('active')) return;
+        if (e.key === 'ArrowLeft') dualPrev.click();
+        if (e.key === 'ArrowRight') dualNext.click();
+        if (e.key === 'Escape') dualClose.click();
+      });
+    });
+  </script>
+  <!-- Pricing Modals -->
+  <div id="handyman-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-target="handyman-modal">&times;</span>
+      <h2>Handyman Prices</h2>
+      <p>The first hour is $100; each additional hour is charged at the standard rate.</p>
+      <ul>
+        <li>Furniture Assembly: $50/hr</li>
+        <li>Wall Mounting: $60/hr</li>
+        <li>Installation: $55/hr</li>
+        <li>Electrical Work: $65/hr</li>
+        <li>Plumbing: $60/hr</li>
+        <li>General Repairs: $50/hr</li>
+      </ul>
+      <p>*When you book both our handyman and cleaning services together, the first hour will be billed at the standard hourly rate.*</p>
+      <!-- Promo Banner -->
+      <div class="promo-banner">
+        <p>
+          <strong>🎉 Hurry!</strong>
+          Follow us on
+          <a href="https://www.instagram.com/cozycrewla" target="_blank">Instagram</a>
+          or
+          <a href="https://www.facebook.com/profile.php?id=61575519134304" target="_blank">Facebook</a>
+          by month-end & get discount
+          <span class="promo-price">20%</span>!
+        </p>
+      </div>
+      <a href="index.html" class="cta-button">Get a Free Quote</a>
+    </div>
+  </div>
+  <div id="cleaning-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-target="cleaning-modal">&times;</span>
+      <h2>Cleaning Prices</h2>
+      <ul>
+        <li>Standard Cleaning: $40/hr (minimum 3h)</li>
+        <li>Deep Cleaning: $55/hr</li>
+        <li>Move-in/Move-out: $65/hr</li>
+        <li>Office Cleaning: $45/hr(minimum 2h)</li>
+        <li>Post-Renovation: $70/hr</li>
+        <li>Eco-friendly: $55/hr</li>
+      </ul>
+      <a>Discounts:
+        20% off weekly cleanings
+        10% off bi-weekly cleanings</a>
+      <h3>Additional Services</h3>
+      <ul>
+        <li>Microwave Cleaning: +$15/item</li>
+        <li>Inside the Oven/Fridge: +$20/item</li>
+        <li>Wipe Ceiling Fans: +$10/item</li>
+        <li>Cabinet Cleaning: +$10/cabinet</li>
+        <li>Window Cleaning: +$5/window</li>
+        <li>Hand Wipe Baseboards: +$15-$30</li>
+        <li>Sweep Balcony, Patio, or Garage: +$20</li>
+        <li>Laundry (Per Load): +$15</li>
+      </ul>
+      <!-- Promo Banner -->
+      <div class="promo-banner">
+        <p>
+          <strong>🎉 Hurry!</strong>
+          Follow us on
+          <a href="https://www.instagram.com/cozycrewla" target="_blank">Instagram</a>
+          or
+          <a href="https://www.facebook.com/profile.php?id=61575519134304" target="_blank">Facebook</a>
+          by month-end & get any cleaning at
+          <span class="promo-price">$40/hr</span>!
+        </p>
+      </div>
+      <a href="index.html" class="cta-button">Get a Free Quote</a>
+    </div>
+  </div>
+</body>
+</html>
