@@ -14,7 +14,7 @@ section {
   scroll-margin-top: 80px; /* высота вашего .header-bar */
 }
 
-.logo{height:140px;}
+.logo{height:80px;}
 .nav{list-style:none;display:flex;gap:2rem;}
 .nav a{text-decoration:none;color:#89ecda;font-weight:600;transition:color .3s;}
 .nav a:hover,.nav a.active{color:#00ffc8;}
@@ -200,14 +200,2734 @@ footer{text-align:center;padding:1.5rem;background:rgba(0,0,0,0.3);}
 /* Header improvements */
 .header-bar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.7);
+  height: 80px;
+  padding: 0 2rem;
+  background: rgba(0,0,0,0.7);
   backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header-left span {
+  color: #89ecda;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+.header-left img {
+  height: 24px;
+  width: 24px;
+  transition: transform 0.2s, filter 0.2s;
+}
+.header-left img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+.logo {
+  justify-self: center;
+  height: 60px;
+}
+.logo-link { display: inline-block; }
+
+/* Стилі для десктопної версії */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-self: end; /* Розміщуємо в кінці header-bar */
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin: 0; /* Забираємо зайві відступи */
+  padding: 0; /* Забираємо зайві відступи */
+  height: 100%; /* Висота на всю секцію */
+  align-items: center; /* Вирівнюємо по центру */
+}
+
+.nav a {
+  text-decoration: none;
+  color: #89ecda;
+  font-weight: 600;
+  transition: color 0.3s;
+  white-space: nowrap; /* Забороняємо перенос тексту */
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #00ffc8;
+}
+
+/* Responsive: hide follow-text on narrow screens */
+@media (max-width: 768px) {
+  .nav {
+  list-style: none;
+  display: flex;
+  position:absolute;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0; /* Забираємо зайві відступи */
+  padding: 0; /* Забираємо зайві відступи */
+  height: 100%; /* Висота на всю секцію */
+  align-items: center; /* Вирівнюємо по центру */
+}
+  .header-left span {
+    display: none;
+  }
+  /* collapse nav into scrollable */
+  .nav {
+    gap: 1rem;
+    overflow-x: auto;
+  }
+  .contact-info a {
+  margin-left: 0.5rem;
+  color: #fff;
+  font-size: 1.5vw;    /* стало меньше */
+  padding: 0.1rem;    /* уменьшён padding */
+  text-decoration: none;
+  transition: color 0.3s, transform 0.2s;
+}
+}
+.contact-info a {
+  margin-left: 0.5rem;
+  color: #fff;
+  font-size: 1vw;    /* стало меньше */
+  padding: 0.1rem;    /* уменьшён padding */
+  text-decoration: none;
+  transition: color 0.3s, transform 0.2s;
+}
+/* Header improvements per six-point spec */
+.header-bar {
+  display: flex;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 2rem;
+  height: 80px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  justify-content: space-between
+}
+.header-left, .header-right { display: flex; align-items: center; gap: 0.5rem; }
+.follow-label { color: #89ecda; font-weight:600; font-size:0.9rem; }
+.icon-btn img { width:24px; height:24px; transition: transform .2s, filter .2s; }
+.icon-btn:hover img { transform: scale(1.1); filter: brightness(1.2); }
+.contact-info { display:flex; align-items:center; margin-left:1rem; }
+.contact-btn { color:#fff; font-size:1.2rem; padding:0.2rem; text-decoration:none; transition: color .3s; }
+.contact-btn + .contact-btn::before,
+.icon-btn + .contact-btn::before { content:"|"; color:#555555; margin:0 0.5rem; }
+.contact-btn:hover { text-decoration:underline; color: #ffd700; }
+
+/* Добавлено: две фоновые картинки для секции Our Services */
+#services-section {
+  background-image: url('images/handyman-bg.jpg'), url('images/cleaning-bg.jpg');
+  background-position: left center, right center;
+  background-size: 40% auto, 40% auto;
+  background-repeat: no-repeat, no-repeat;
+  padding: 4rem 2rem;
+}
+/* 1) Делаем секцию относительной для наложения псевдо-элемента */
+#services-section {
+  position: relative;
+  
+  background-position: 25% center, 75% center !important;}
+
+/* 2) Тёмная полупрозрачная маска поверх фоновых изображений */
+#services-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  
+  z-index: 1;
+}
+
+/* 3) Поднимаем контент над маской */
+#services-section > h2,
+#services-section > div {
+  position: relative;
+  z-index: 2;
+}
+/* === 1. Секция становится позиционированной, чтобы псевдо-элемент работал === */
+#services-section {
+  position: relative !important;
+
+  /* две картинки, каждая по 50% ширины, первая «приклеена» к левому краю, вторая — к правому */
+  background-size: 50% auto, 50% auto !important;
+  background-position: left center, right center !important;
+  background-repeat: no-repeat, no-repeat !important;
+
+  /* на случай, если есть какие-то float’ы — ограничиваем секцию по высоте её содержимым */
+  overflow: hidden;
+}
+
+/* === 2. Тёмная полупрозрачная маска поверх обеих фонов === */
+#services-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  
+  z-index: 1;
+}
+
+/* === 3. Контент секции поверх маски === */
+#services-section > h2,
+#services-section > div {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+
+
+/* === Custom Overrides === */
+:root {
+  --clr-accent: #ffd700;
+}
+
+/* Center and darken background halves */
+#services-section {
+  position: relative !important;
+  overflow: hidden !important;
+  background-size: 50% auto, 50% auto !important;
+  background-position: left center, right center !important;
+  background-repeat: no-repeat, no-repeat !important;
+}
+
+/* Glassmorphism grid layout for cards */
+.cards {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+
+/* Card styling */
+.card {
+  background: rgba(255,255,255,0.1) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  transition: transform .3s ease, box-shadow .3s ease !important;
+}
+
+.card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2) !important;
+}
+
+/* Icon before each service heading */
+#services-section h3 {
+  color: #fff !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+#services-section h3::before {
+  font-family: "Font Awesome 6 Free" !important;
+  content: "\f0ad" !important; /* wrench icon */
+  font-weight: 900 !important;
+  margin-right: 0.5rem !important;
+  color: var(--clr-accent) !important;
+}
+
+/* Section title styling with underline accent */
+#services-section > h2.section-title {
+  position: relative !important;
+  text-align: center !important;
+  margin-bottom: 3rem !important;
+  color: #fff !important;
+  font-size: 2rem !important;
+}
+
+#services-section > h2.section-title::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -0.8rem !important;
+  left: 50% !important;
+  width: 60px !important;
+  height: 3px !important;
+  background: var(--clr-accent) !important;
+  transform: translateX(-50%) !important;
+}
+/* Bring content above overlay */
+#services-section > h2.section-title,
+#services-section > div {
+  position: relative !important;
+  z-index: 2 !important;
+}
+/* Убираем желтое подчёркивание у заголовка */
+#services-section > h2.section-title::after {
+  display: none !important;
+}
+
+/* Убираем квадратики-иконки перед HANDYMAN и CLEANING */
+#services-section h3::before {
+  content: none !important;
+}
+
+/* Booking Section Styles */
+
+#booking-section .form-group {
+  margin-bottom: 1rem;
+}
+#booking-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+#booking-section input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+}
+#booking-section input:focus {
+  outline: 2px solid var(--clr-accent);
+}
+#booking-section .cta-button {
+  display: inline-block;
+  background: var(--clr-accent);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s, transform 0.2s;
+}
+#booking-section .cta-button:hover {
+  background: #e6c200;
+  transform: scale(1.05);
+}
+
+/* Booking Section Improvements */
+
+
+#booking-section form {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.5rem 2rem !important;
+}
+
+#booking-section .form-group {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 0 !important;
+}
+
+#booking-section label {
+  margin-bottom: 0.5rem !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+}
+
+#booking-section input {
+  padding: 0.75rem 1rem !important;
+  border: 1px solid rgba(255,255,255,0.4) !important;
+  border-radius: 6px !important;
+  background: rgba(0,0,0,0.6) !important;
+  color: #fff !important;
+  font-size: 1rem !important;
+}
+
+#booking-section input::placeholder {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+#booking-section button[type="submit"] {
+  grid-column: 1 / -1 !important;
+  justify-self: start !important;
+}
+
+#booking-section > h2.section-title {
+  position: relative !important;
+  text-align: center !important;
+  margin-bottom: 2.5rem !important;
+  font-size: 2rem !important;
+  color: #fff !important;
+}
+
+#booking-section > h2.section-title::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -0.6rem !important;
+  left: 50% !important;
+  width: 60px !important;
+  height: 3px !important;
+  background: var(--clr-accent) !important;
+  transform: translateX(-50%) !important;
+}
+
+#booking-section .contact-info {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 1rem 2rem !important;
+  margin-top: 2.5rem !important;
+  color: #eee !important;
+  font-size: 0.95rem !important;
+}
+
+#booking-section .contact-info p {
+  margin: 0 !important;
+}
+
+/* Final Booking Section Layout */
+
+
+/* Container for form and info card */
+#booking-section .booking-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 2rem !important;
+}
+
+/* Form area */
+#booking-section form {
+  flex: 1 1 60% !important;
+}
+
+/* Info card */
+#booking-section .booking-info-card {
+  flex: 1 1 35% !important;
+  background: rgba(255,255,255,0.1) !important;
+  backdrop-filter: blur(6px) !important;
+  padding: 1.5rem !important;
+  border-radius: 12px !important;
+  color: #fff !important;
+}
+
+/* Submit button color match header buttons */
+#booking-section button[type="submit"] {
+  background: var(--clr-primary) !important;
+  color: #000 !important;
+}
+
+/* Full-width textarea */
+#booking-section .form-group.full-width {
+  flex: 1 1 100% !important;
+}
+
+/* Follow us icons */
+#booking-section .booking-info-card .follow-us {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin-top: 1rem !important;
+}
+#booking-section .booking-info-card .follow-us span {
+  font-weight: 600 !important;
+  color: #fff !important;
+}
+#booking-section .booking-info-card .icon-btn img {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* Adjust form inputs width */
+#booking-section input, #booking-section textarea {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Booking Section Grid and Responsiveness */
+#booking-section .booking-container {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 2rem !important;
+}
+@media (max-width: 768px) {
+  #booking-section .booking-container {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Focus styles for inputs */
+#booking-section input:focus,
+#booking-section textarea:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px var(--clr-accent) !important;
+  transition: box-shadow .2s !important;
+}
+
+/* Button ripple effect */
+#booking-section .cta-button {
+  position: relative !important;
+  overflow: hidden !important;
+}
+#booking-section .cta-button::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important; left: 50% !important;
+  width: 0 !important; height: 0 !important;
+  background: rgba(255,255,255,0.3) !important;
+  border-radius: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  transition: width .4s ease, height .4s ease !important;
+}
+#booking-section .cta-button:active::after {
+  width: 200px !important; height: 200px !important;
+  transition: 0s !important;
+}
+
+/* Toast styles */
+.toast {
+  position: fixed !important;
+  bottom: 1.5rem !important; right: 1.5rem !important;
+  background: var(--clr-accent) !important;
+  color: #000 !important; padding: .75rem 1.25rem !important;
+  border-radius: 6px !important;
+  opacity: 0 !important; transform: translateY(10px) !important;
+  transition: opacity .3s, transform .3s !important;
+  z-index: 10001 !important;
+}
+.toast.show {
+  opacity: 1 !important; transform: translateY(0) !important;
+}
+
+/* Info list styling */
+#booking-section .info-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+#booking-section .info-list li {
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 0.75rem !important;
+}
+#booking-section .info-list li i {
+  margin-right: 0.75rem !important;
+  color: var(--clr-accent) !important;
+}
+
+/* Map container styling */
+.map-container {
+  width: 100% !important;
+  height: 200px !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  margin: 1rem 0 !important;
+}
+
+/* Contact card visuals */
+#booking-section .booking-info-card {
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
+}
+
+/* Move contact-info card to the right outside booking card */
+@media (min-width: 1024px) {
+  
+  #booking-section .booking-container {
+    display: block !important;
+  }
+  #booking-section form {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+  #booking-section .booking-info-card {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 320px !important;
+    margin: 0 !important;
+  }
+}
+@media (max-width: 1023px) {
+  /* Mobile: revert to default stacking */
+  
+  #booking-section .booking-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+  #booking-section .booking-info-card {
+    position: static !important;
+    width: auto !important;
+  }
+}
+
+/* Move contact-info card behind booking card on the right */
+@media (min-width: 1024px) {
+  /* Allow overflow visible */
+  
+  /* Ensure container is relative for absolute positioning */
+  #booking-section .booking-container {
+    position: relative !important;
+  }
+  /* Position contact card behind form, offset to the right */
+  #booking-section .booking-info-card {
+    position: absolute !important;
+    top: 2rem !important;
+    right: -350px !important;
+    width: 300px !important;
+    z-index: 0 !important;
+    opacity: 0.9 !important;
+    margin: 0 !important;
+  }
+  /* Bring form above */
+  #booking-section form {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+}
+
+/* Booking section structure */
+#booking-section .booking-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Left side */
+#booking-section .booking-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#booking-section select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 1rem;
+}
+#booking-section .booking-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--clr-accent);
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .3s, transform .2s;
+}
+#booking-section .booking-btn i {
+  margin-right: 0.5rem;
+}
+#booking-section .booking-btn:hover {
+  background: #e6c200;
+  transform: translateY(-2px);
+}
+
+/* Divider */
+#booking-section .divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+#booking-section .divider::before,
+#booking-section .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+}
+#booking-section .divider span {
+  margin: 0 1rem;
+  color: #fff;
+}
+
+/* Trust logos */
+#booking-section .trust-logos {
+  display: flex;
+  gap: 1rem;
+}
+#booking-section .trust-logos img {
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Right side info card */
+#booking-section .booking-info-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+#booking-section .booking-info-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+#booking-section .booking-info-card .info-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#booking-section .booking-info-card .info-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: #eee;
+}
+#booking-section .booking-info-card .info-list li i {
+  color: var(--clr-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #booking-section .booking-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Booking Section as Card */
+
+
+/* Adjust children text color */
+#booking-section .section-title,
+#booking-section label,
+#booking-section .info-list li {
+  color: #333333 !important;
+}
+
+/* Invert select and inputs for light card */
+#booking-section select,
+#booking-section input,
+#booking-section textarea {
+  background: #f9f9f9 !important;
+  color: #333333 !important;
+  border: 1px solid #ddd !important;
+}
+#booking-section select:focus,
+#booking-section input:focus,
+#booking-section textarea:focus {
+  box-shadow: 0 0 0 2px rgba(33,150,243,0.3) !important;
+}
+
+/* Buttons style for light card */
+#booking-section .booking-btn,
+#booking-section .call-btn {
+  background: var(--clr-accent) !important;
+  color: #fff !important;
+}
+#booking-section .booking-btn:hover,
+#booking-section .call-btn:hover {
+  background: #e6b700 !important;
+}
+
+/* Divider on light background */
+#booking-section .divider::before,
+#booking-section .divider::after {
+  background: #ddd !important;
+}
+#booking-section .divider span {
+  color: #888 !important;
+}
+
+/* Contact Info Card adjustments */
+#booking-section .booking-info-card {
+  background: #f9f9f9 !important;
+  color: #333333 !important;
+  backdrop-filter: none !important;
+}
+#booking-section .booking-info-card h3 {
+  color: #333333 !important;
+}
+#booking-section .booking-info-card .info-list li i {
+  background: var(--clr-primary) !important;
+  color: #fff !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  
+  #booking-section .booking-content {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* === Booking Card Style aligned with site aesthetic === */
+
+
+/* Glass panels for form and info card */
+#booking-section .booking-left,
+#booking-section .booking-info-card {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Inputs, select, textarea styling */
+#booking-section input,
+#booking-section select,
+#booking-section textarea {
+  background: rgba(255,255,255,0.1) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  border-radius: 8px !important;
+  padding: 0.75rem !important;
+}
+
+/* Placeholder text */
+#booking-section input::placeholder,
+#booking-section textarea::placeholder {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+/* Labels */
+#booking-section label {
+  color: #fff !important;
+}
+
+/* Buttons primary accent */
+#booking-section .booking-btn.send-btn,
+#booking-section .call-btn {
+  background: var(--clr-primary) !important;
+  color: #000 !important;
+  border-radius: 8px !important;
+  transition: transform .2s ease, filter .2s ease !important;
+}
+
+/* Button hover */
+#booking-section .booking-btn.send-btn:hover,
+#booking-section .call-btn:hover {
+  filter: brightness(1.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Divider lines */
+#booking-section .divider::before,
+#booking-section .divider::after {
+  background: rgba(255,255,255,0.2) !important;
+}
+#booking-section .divider span {
+  color: #fff !important;
+}
+
+/* Contact Info card text */
+#booking-section .booking-info-card {
+  color: #fff !important;
+}
+#booking-section .booking-info-card .info-list li i {
+  background: var(--clr-primary) !important;
+  color: #000 !important;
+}
+#booking-section .booking-info-card .info-list li a {
+  color: #fff !important;
+}
+
+/* Section title accent underline */
+#booking-section .section-title::after {
+  background: var(--clr-accent) !important;
+}
+
+/* Responsive: keep same layout */
+@media (max-width: 768px) {
+  
+  #booking-section .booking-content {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* Align booking-left to left */
+#booking-section .booking-content {
+  justify-content: start !important;
+}
+
+
+#booking-section .booking-left form {
+  margin-top: 1.5rem !important;
+}
+
+/* Translate section title and adjust styles */
+
+/* If needed, ensure underlying background shows through title by enabling background-clip */
+#booking-section .section-title {
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* Optionally set a gradient or image background for the text */
+}
+
+/* === Refined Booking Section Styles === */
+
+
+
+/* Layout: form grid and info card static */
+#booking-section .booking-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+#booking-section .booking-left form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.5rem;
+}
+
+/* Grouping fields: full width */
+#booking-section .full-width {
+  grid-column: 1 / -1;
+}
+
+/* Card titles static */
+#booking-section .booking-left h3,
+#booking-section .booking-info-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* Form labels */
+#booking-section .form-group label {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.25rem;
+}
+
+/* Inputs and textarea styling */
+#booking-section input,
+#booking-section textarea {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+}
+#booking-section textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+/* Placeholder */
+#booking-section ::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+/* Button styles */
+#booking-section .send-btn,
+#booking-section .call-btn {
+  background: var(--clr-primary);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  grid-column: 1 / -1;
+}
+#booking-section .send-btn:hover,
+#booking-section .call-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* Info card styling */
+#booking-section .booking-info-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+#booking-section .booking-info-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#booking-section .booking-info-card li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+#booking-section .booking-info-card li i {
+  margin-right: 0.75rem;
+  background: var(--clr-primary);
+  color: #000;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+/* Input validation styling */
+#booking-section input:invalid {
+  border-color: #e74c3c;
+}
+
+/* Remove absolute overflow */
+#booking-section .booking-info-card {
+  position: static;
+}
+
+/* Focus styles */
+#booking-section input:focus-visible,
+#booking-section textarea:focus-visible,
+#booking-section select:focus-visible,
+#booking-section .send-btn:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
+/* Link colors in info card */
+#booking-section .booking-info-card a {
+  color: var(--clr-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #booking-section .booking-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Updated Booking Section Styles === */
+/* Remove background on section */
+#booking-section {
+  background: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Ensure section title is visible */
+#booking-section .section-title {
+  color: #fff !important;
+}
+
+/* Layout: grid 2:1 */
+#booking-section .booking-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Static card headings */
+#booking-section .booking-left h3,
+#booking-section .booking-info-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #fff !important;
+}
+
+/* Form grid 2x2 */
+#booking-section .booking-left form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.5rem;
+}
+
+/* Full width fields */
+#booking-section .full-width,
+#booking-section .send-btn {
+  grid-column: 1 / -1;
+}
+
+/* Card glass panels */
+#booking-section .booking-left,
+#booking-section .booking-info-card {
+  background: rgba(255,255,255,0.05) !important;
+  backdrop-filter: blur(8px) !important;
+  border-radius: 8px !important;
+  padding: 1.5rem !important;
+}
+
+/* Form labels */
+#booking-section .form-group label {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.25rem;
+}
+
+/* Inputs & textarea */
+#booking-section input,
+#booking-section textarea {
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  padding: 0.75rem 1rem !important;
+}
+
+/* Placeholder color */
+#booking-section ::placeholder {
+  color: rgba(255,255,255,0.6) !important;
+}
+
+/* Buttons */
+#booking-section .send-btn,
+#booking-section .call-btn {
+  background: var(--clr-primary) !important;
+  color: #000 !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 8px !important;
+  transition: transform .2s ease, filter .2s ease !important;
+}
+#booking-section .send-btn:hover,
+#booking-section .call-btn:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.1) !important;
+}
+
+/* Contact list */
+#booking-section .booking-info-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#booking-section .booking-info-card li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #fff !important;
+}
+#booking-section .booking-info-card li i {
+  margin-right: 0.75rem;
+  background: var(--clr-primary) !important;
+  color: #000 !important;
+  border-radius: 50% !important;
+  padding: 0.5rem !important;
+}
+#booking-section .booking-info-card a {
+  color: var(--clr-primary) !important;
+  text-decoration: none !important;
+}
+
+/* Focus styles */
+#booking-section input:focus-visible,
+#booking-section textarea:focus-visible,
+#booking-section select:focus-visible,
+#booking-section .send-btn:focus-visible {
+  outline: 2px solid var(--clr-accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #booking-section .booking-content {
+    grid-template-columns: 1fr;
+  }
+  #booking-section .booking-left form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Contact Section styles --- */
+#booking-section {
+  margin: 3rem auto;
+  max-width: 1100px;
+  padding: 3rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  color: #fff;
+}
+
+#booking-section .section-title {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+#booking-section .booking-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+#booking-section h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+#booking-section .booking-left form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+}
+
+#booking-section .full-width,
+#booking-section .send-btn {
+  grid-column: 1 / -1;
+}
+
+#booking-section input,
+#booking-section textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+#booking-section textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#booking-section ::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+#booking-section .send-btn {
+  background: var(--clr-primary);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s ease, filter .2s ease;
+}
+#booking-section .send-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+#booking-section .booking-info-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+#booking-section .info-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#booking-section .info-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+#booking-section .info-list li i {
+  margin-right: 0.75rem;
+  background: var(--clr-primary);
+  color: #000;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+#booking-section .info-list a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#booking-section input:focus-visible,
+#booking-section textarea:focus-visible,
+#booking-section .send-btn:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
+  #booking-section .booking-content {
+    grid-template-columns: 1fr;
+  }
+  #booking-section .booking-left form {
+    grid-template-columns: 1fr;
+  }
+  #booking-section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* --- Adjustments v2 --- */
+/* Hide leftover card-title elements */
+#booking-section .card-title {
+  display: none !important;
+}
+
+/* Remove underline from section title */
+#booking-section .section-title::after {
+  display: none !important;
+}
+
+/* Increase card background opacity */
+#booking-section .booking-left,
+#booking-section .booking-info-card {
+  background: rgba(255,255,255,0.12) !important;
+}
+
+/* Reduce grid gaps in form */
+#booking-section .booking-left form {
+  gap: 1rem 1rem !important;
+}
+
+/* Ensure info-card static positioning */
+#booking-section .booking-info-card {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+
+/* Optional: tweak container gap */
+#booking-section .booking-content {
+  gap: 2rem !important;
+}
+
+/* === V3: Premium Visual Enhancements for Contact Section === */
+
+/* 1) Add soft shadows and more space */
+#booking-section .booking-left,
+#booking-section .booking-info-card {
+  padding: 2rem !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7) !important;
+  transition: box-shadow 0.3s ease !important;
+}
+#booking-section .booking-left:hover,
+#booking-section .booking-info-card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* 2) Input icons inside labels */
+#booking-section .form-group {
+  position: relative;
+}
+#booking-section .form-group input,
+#booking-section .form-group textarea {
+  padding-left: 3rem !important;
+}
+#booking-section .form-group label::before {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--clr-accent);
+  font-size: 1rem;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+#booking-section .form-group:nth-of-type(1) label::before { content: "\f007"; }
+#booking-section .form-group:nth-of-type(2) label::before { content: "\f095"; }
+#booking-section .form-group:nth-of-type(3) label::before { content: "\f0e0"; }
+#booking-section .form-group:nth-of-type(4) label::before { content: "\f073"; }
+#booking-section .form-group.full-width label::before { content: "\f31d"; }
+
+
+/* 3) Flatpickr calendar styling */
+.flatpickr-calendar {
+  background: rgba(0,0,0,0.8) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;
+}
+.flatpickr-day:hover {
+  background: var(--clr-primary) !important;
+  color: #000 !important;
+}
+
+/* 4) Label animate on focus */
+#booking-section .form-group input:focus + label,
+#booking-section .form-group textarea:focus + label {
+  transform: translateY(-1.5rem) scale(0.85);
+  color: var(--clr-accent);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* 5) Pulse animation on Send button */
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+#booking-section .send-btn {
+  animation: pulse 3s ease-in-out infinite alternate;
+}
+
+/* 6) Section gradient background */
+#booking-section {
+  background: linear-gradient(
+    135deg,
+    rgba(14,19,14,0.8),
+    rgba(36,45,34,0.6)
+  ) !important;
+}
+
+/* 7) Text shadow on section title */
+#booking-section .section-title {
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+/* 8) Accent icons in Contact Info */
+#booking-section .booking-info-card li i {
+  box-shadow: 0 0 0 3px rgba(0,255,200,0.5);
+}
+
+/* 9) Narrow form width on large screens */
+@media (min-width: 1200px) {
+  #booking-section .booking-left {
+    max-width: 600px;
+    margin-right: auto;
+  }
+}
+
+/* === V4: Input glow and button ripple animations === */
+
+/* Glow on focus */
+@keyframes glow {
+  from { box-shadow: 0 0 0px rgba(0,255,200,0); }
+  to   { box-shadow: 0 0 8px rgba(0,255,200,0.8); }
+}
+#booking-section input:focus {
+  animation: glow 0.6s ease-in-out forwards !important;
+}
+
+/* Button ripple effect */
+#booking-section .send-btn {
+  position: relative !important;
+  overflow: hidden !important;
+}
+#booking-section .send-btn::after {
+  content: '';
+  position: absolute;
+  width: 20px; height: 20px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform .5s, opacity .5s;
+}
+#booking-section .send-btn:active::after {
+  top: 50%; left: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(10);
+  transition: transform .3s, opacity .8s;
+}
+
+/* === V5: Additional Animations & UX Enhancements === */
+
+/* Keyframes for shake */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+
+/* ScrollReveal initialization via data attributes */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Shake invalid input */
+#booking-section input:invalid {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Shake icon on hover */
+#booking-section .booking-info-card li i:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Highlight list item on hover */
+#booking-section .booking-info-card li:hover {
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+/* Button success checkmark */
+#booking-section .send-btn {
+  position: relative;
+  overflow: hidden;
+}
+#booking-section .send-btn.success {
+  
+  color: #fff;
+}
+#booking-section .send-btn.success::after {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#booking-section .send-btn.success.show-check::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+/* Layout для hero: карточка слева, текст — справа */
+.hero {
+  display: flex;
+  justify-content: center; /* центрируем внутренний .hero-inner */
+}
+.hero-inner {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+}
+.booking-card {
+  flex: 0 0 320px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+}
+.booking-form .form-group {
+  margin-bottom: 1rem;
+}
+.booking-form label {
+  color: #fff;
+  margin-bottom: .5rem;
+  display: block;
+  font-weight: 600;
+}
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  padding: .75rem;
+}
+.booking-form .send-btn {
+  background: var(--clr-primary);
+  color: #000;
+  margin-top: 1rem;
+  padding: .75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.hero-text {
+  flex: 1;
+  color: #ffd900;
+  text-align: right;
+}
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+.hero-text p {
+  margin-bottom: 1.5rem;
+}
+.hero-text .features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+.hero-text .features li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: .75rem;
+}
+.hero-text .features li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: var(--clr-primary);
+}
+.hero-text .cta-button {
+  background: var(--clr-primary);
+  color: #000;
+}
+.hero-inner {
+  display: flex !important;
+  gap: 2rem !important;
+}
+.hero .booking-card {
+  display: block !important;
+  flex: 0 0 320px !important;
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  padding: 1.5rem !important;
+  border-radius: 12px !important;
+  z-index: 2 !important;
+}
+
+
+
+/* ===== ПРАВИЛЬНЫЙ HERO БЛОК ===== */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+}
+
+.booking-card {
+  flex: 0 0 320px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+  transition: box-shadow 0.4s ease;
+}
+
+.booking-card:hover {
+  box-shadow: 0 12px 48px rgba(0,0,0,0.8);
+}
+
+.booking-form {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.booking-form .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.booking-form label {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.booking-form input, .booking-form textarea {
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+
+.booking-form input::placeholder, .booking-form textarea::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.booking-form .send-btn {
+  width: 150px;
+  background: var(--clr-primary);
+  color: hsl(0, 91%, 5%);
+  margin: 1.5rem auto 0 auto;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.booking-form .send-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0,255,200,0.6);
+}
+
+/* ===== ПРАВИЛЬНОЕ ВЫРАВНИВАНИЕ ТЕКСТА СПРАВА ===== */
+.hero-text {
+  flex: 1;
+  color: #ffd700;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  text-shadow: 0 0 10px rgba(255,215,0,0.6);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #eeeeee;
+}
+
+.hero-text .features {
+  font-size: 1rem;
+  color: #cccccc;
+  margin: 1.5rem 0;
+  list-style: none;
+}
+
+.hero-text .features li::before {
+  content: '✔️ ';
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--clr-primary);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0,255,200,0.6);
+}
+
+/* ===== АДАПТИВ ДЛЯ МОБИЛЬНЫХ ===== */
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .booking-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .booking-form {
+    max-width: 90%;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+}
+
+.text-wrapper {
+  max-width: 600px;
+  width: 100%;
+  text-align: right;
+}
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    justify-content: center;
+    text-align: center;
+  }
+  .text-wrapper {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background .2s;
+}
+
+/* Стрелка влево */
+.prev-btn {
+  left: 10px;
+}
+
+/* Стрелка вправо */
+.next-btn {
+  right: 10px;
+}
+.gallery {
+  margin-top: 3rem;
+  padding: 0 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-thumb:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* === Font Awesome overrides === */
+#booking-section .form-group {
+  position: relative;
+}
+#booking-section .form-group input,
+#booking-section .form-group textarea {
+  padding-left: 3rem !important;
+}
+#booking-section .form-group label::before {
+  position: absolute !important;
+  left: 0.75rem; top: 50%;
+  transform: translateY(-50%);
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  font-size: 1rem !important;
+}
+#booking-section .form-group:nth-of-type(1) label::before { content: "\f007" !important; }
+#booking-section .form-group:nth-of-type(2) label::before { content: "\f095" !important; }
+#booking-section .form-group:nth-of-type(3) label::before { content: "\f0e0" !important; }
+#booking-section .form-group:nth-of-type(4) label::before { content: "\f073" !important; }
+#booking-section .form-group.full-width label::before { content: "\f31d" !important; }
+
+#booking-section .booking-info-card .info-list li i {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+}
+
+
+/* Center icons in info list */
+#booking-section .booking-info-card .info-list li {
+  display: flex;
+  align-items: center;
+}
+#booking-section .booking-info-card .info-list li i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+/* Center pseudo-icons in form inputs */
+#booking-section .form-group {
+  position: relative;
+}
+#booking-section .form-group label::before {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  color: var(--clr-accent);
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+/* Lift Contact section upward */
+#booking-section {
+  margin-top: -5rem;
+}
+/* Для выравнивания иконок в полях */
+#booking-section .form-group {
+  position: relative;
+}
+
+#booking-section .form-group input,
+#booking-section .form-group textarea {
+  padding-left: 3rem !important; /* отступ для иконки */
+}
+
+#booking-section .form-group label::before {
+  content: "\f007"; /* иконка для имени */
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  font-size: 1rem !important;
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--clr-accent);
+}
+
+
+/* Draggable Gallery Styles */
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  cursor: grab;
+  user-select: none;
+  padding: 1rem;
+  gap: 1rem;
+}
+.gallery.active {
+  cursor: grabbing;
+}
+.gallery img {
+  max-height: 200px;
+  
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+/* FireFox and IE scrollbar hiding */
+.gallery {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+
+/* Двойная галерея: контейнер и стили */
+.galleries-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.gallery-left {
+  background: rgba(255,255,255,0.05);
+}
+.gallery-right {
+  background: rgba(255,255,255,0.08);
+}
+
+/* Скрытый заголовок для доступности */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* About Us Section */
+#about-us {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem;
+  margin: 2rem 0;
+  border-radius: 12px;
+}
+#about-us .about-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+#about-us .about-wrapper img {
+  flex: 1 1 150px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+#about-us .about-text {
+  flex: 1 1 150px;
+  color: #fff;
+}
+#about-us .about-text h2 {
+  color: var(--clr-accent);
+  margin-bottom: 1rem;
+}
+#about-us .about-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+
+/* Центрированная карточка BookingContactInfo */
+#contact .booking-info-card {
+  
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+}
+
+
+/* Эстетичное оформление формы бронирования */
+.booking-card {
+  max-width: 360px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+.booking-card .card-title,
+.booking-card label {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.booking-card .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.booking-card input,
+.booking-card textarea {
+  padding: 0.6rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.15);
+  color: hsl(0, 20%, 99%);
+  font-size: 0.95rem;
+}
+.booking-card input::placeholder,
+.booking-card textarea::placeholder {
+  color: rgba(0,0,0,0.6);
+}
+.booking-btn.send-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--clr-primary);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.booking-btn.send-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+
+/* Убираем синий цвет ссылок и добавляем отступ от иконок в карточке контактов */
+#contact .booking-info-card .info-list li i {
+  margin-right: 0.5rem;
+}
+#contact .booking-info-card .info-list li a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+
+/* 1. Полупрозрачный градиент и светлая рамка */
+#contact .booking-info-card {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+  
+}
+
+/* 2. Разделитель под заголовком */
+#contact .booking-info-card h3 {
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+#contact .booking-info-card h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--clr-accent);
+}
+
+/* 3. Иконки в кружках */
+#contact .booking-info-card .info-list li i {
+  background: var(--clr-accent);
+  color: #000;
+  border-radius: 50%;
+  padding: 0.4rem;
+  min-width: 1.6rem;
+  text-align: center;
+  transition: transform .2s, filter .2s;
+}
+
+/* 4. Две колонки для списка */
+#contact .booking-info-card .info-list {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0.75rem 2rem;
+  line-height: 1.6;
+}
+
+/* 5. Плавные эффекты при наведении */
+#contact .booking-info-card .info-list li a,
+#contact .booking-info-card .info-list li i {
+  transition: transform .2s, filter .2s;
+}
+#contact .booking-info-card .info-list li a:hover,
+#contact .booking-info-card .info-list li i:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* 7. Увеличенный межстрочный интервал и отступы */
+#contact .booking-info-card .info-list li {
+  margin-bottom: 0.75rem;
+}
+
+/* 8. Кнопка CTA */
+#contact .booking-info-card .contact-cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--clr-primary);
+  color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .2s, filter .2s;
+}
+#contact .booking-info-card .contact-cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+
+/* Override border width for booking card */
+#contact .booking-info-card {
+  border: 4px solid rgba(255,255,255,0.2) !important;
+}
+
+
+/* Увеличиваем ширину карточки */
+#contact .booking-info-card {
+  width: 80% !important;
+  max-width: 600px !important;
+}
+
+
+/* Center Follow Us section */
+#contact .booking-info-card .follow-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Keep schedule and all items on one line */
+#contact .booking-info-card .info-list li {
+  white-space: nowrap;
+}
+
+ 
+/* === Overrides: remove scrollbar from testimonials-container === */
+.testimonials-container {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.testimonials-container::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* === Unified image sizes in DualGallery === */
+#dual-gallery .gallery img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* === Restrict custom scrollbar to .gallery only === */
+.gallery {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,255,200,0.6) rgba(255,255,255,0.1);
+}
+.gallery::-webkit-scrollbar {
+  height: 8px;
+}
+.gallery::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+.gallery::-webkit-scrollbar-thumb {
+  background: rgba(0,255,200,0.6);
+  border-radius: 4px;
+}
+/* В конец вашего styles.css */
+#contact .booking-info-card .info-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;        /* расстояние между иконкой и текстом */
+  white-space: normal; /* чтобы текст переносился, а не вылазил */
+}
+
+/* Обеспечиваем, что иконка не ужимается */
+#contact .booking-info-card .info-list li i {
+  flex-shrink: 0;
+}
+
+
+/* Tooltip снизу карточки */
+#services-section .card {
+  position: relative;
+  cursor: help;
+}
+
+/* Стрелочка */
+#services-section .card::before {
+  content: "";
+  position: absolute;
+  width: 0; height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid rgba(0,0,0,0.9);
+  bottom: -8px;           /* чуть ниже карточки */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Текстовый блок */
+#services-section .card::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(-100% - 16px);   /* 16px — расстояние от стрелки */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 200px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Показать подсказку при наведении */
+#services-section .card:hover::before,
+#services-section .card:hover::after {
+  opacity: 1;
+}
+/* Разрешаем тултипам «вываливаться» из секции */
+#services-section {
+  overflow: visible !important;
+  /* добавляем отступ снизу на случай, 
+     если тултип большой и упирается в край секции */
+  padding-bottom: 4rem !important;
+}
+
+/* На всякий случай разрешаем карточкам не обрезать потомков */
+#services-section .card {
+  overflow: visible !important;
+}
+
+/* Новая ширина и позиционирование подсказки */
+#services-section .card::after {
+  /* позиционируем снизу на 1.25em под карточкой */
+  bottom: -1.25em !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  
+  /* делаем шире и многострочно */
+  max-width: 240px !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  
+  /* фон, отступы, прочее */
+  background: rgba(0,0,0,0.9) !important;
+  color: #fff !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 4px !important;
+  font-size: 0.85rem !important;
+  line-height: 1.4 !important;
+  z-index: 999 !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+  pointer-events: none !important;
+}
+
+/* Стрелочка всё ещё снизу */
+#services-section .card::before {
+  bottom: -0.5em !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+  z-index: 999 !important;
+}
+
+/* При ховере показываем и текст, и стрелку */
+#services-section .card:hover::after,
+#services-section .card:hover::before {
+  opacity: 1 !important;
+}
+/* Увеличиваем ширину и даём место снизу */
+#services-section {
+  overflow: visible !important;
+  padding-bottom: 6rem !important;
+}
+
+#services-section .card {
+  overflow: visible !important;
+}
+
+/* Ширина тултипа */
+#services-section .card::after {
+  max-width: 360px !important;     /* делаем шире */
+  min-width: 240px !important;     /* минимум */
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
+
+/* При желании можно задать фиксированную ширину: */
+/*
+#services-section .card::after {
+  width: 320px !important;
+}
+*/
+
+#services-section .card:hover::after,
+#services-section .card:hover::before {
+  opacity: 1 !important;
+}
+
+/* Pricing Buttons */
+.services-pricing-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  position: relative;
+  z-index: 2;
+}
+.pricing-btn {
+  background: var(--clr-accent);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: filter .2s;
+}
+.pricing-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+  z-index: 10000;
+}
+.modal-content {
+  background: #fff;
+  color: #000;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.modal-content h2 {
+  margin-top: 0;
+}
+.modal-content .close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+/* ===== Modal Content Glassmorphism Style ===== */
+.modal-content {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+/* Modal Heading Accent */
+.modal-content h2 {
+  color: var(--clr-accent) !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Modal List Items color and spacing */
+.modal-content ul li {
+  margin-bottom: 0.5rem !important;
+  color: #ffffff !important;
+}
+
+/* Close Button styling */
+.modal-content .close {
+  color: #ffffff !important;
+  font-size: 1.5rem !important;
+}
+
+/* CTA Button adjustment on modal */
+.modal-content .cta-button {
+  background: var(--clr-accent) !important;
+  color: #000 !important;
+  margin-top: 1.5rem !important;
+}
+.modal-content ul {
+  column-count: 2;
+  column-gap: 1.5rem;
+  list-style-position: inside;
+}
+/* Promo Banner Styles */
+.promo-banner {
+  background: linear-gradient(135deg, #28b487 0%, #7dd56f 100%);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.promo-banner p {
+  color: #fff;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.promo-banner strong {
+  font-size: 1.25rem;
+}
+
+.promo-banner a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.promo-banner .promo-price {
+  background: #fff;
+  color: #28b487;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+}
+
+/* ===== Modal Centering, Animation & Styling Improvements ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  z-index: 10000;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.modal.show {
+  display: flex !important;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-content {
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(20, 20, 20, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+  position: relative !important;
+}
+
+.modal-content h2 {
+  font-size: 1.75rem !important;
+  text-align: center !important;
+  margin-bottom: 1.5rem !important;
+  color: var(--clr-accent) !important;
+}
+
+.modal-content h2 + ul {
+  border-top: 1px solid rgba(255,255,255,0.2) !important;
+  padding-top: 1.5rem !important;
+  margin-top: 1rem !important;
+}
+
+.modal-content .close {
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  font-size: 1.5rem !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  transition: color 0.2s ease !important;
+}
+.modal-content .close:hover {
+  color: #fff !important;
+}
+
+.modal-content .cta-button {
+  display: block !important;
+  width: fit-content !important;
+  margin: 2rem auto 0 auto !important;
+  padding: 0.75rem 2rem !important;
+  font-size: 1.1rem !important;
+  background: var(--clr-primary) !important;
+  color: #000 !important;
+  border-radius: 0.75rem !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.modal-content .cta-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3) !important;
+}
+
+
+
+:root {
+  --clr-primary: #06cea3;
+  --clr-accent: #ffd700;
+  --spacing: 1rem;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+body { margin:0; font-family:'Poppins',sans-serif; background:linear-gradient(135deg,#0e130e,#242d22); color:#f0f0f0; overflow-x:hidden;}
+header{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);position:sticky;top:0;z-index:1000;}
+section {
+  scroll-margin-top: 80px; /* высота вашего .header-bar */
+}
+
+.logo{height:80px;}
+.nav{list-style:none;display:flex;gap:2rem;}
+.nav a{text-decoration:none;color:#89ecda;font-weight:600;transition:color .3s;}
+.nav a:hover,.nav a.active{color:#00ffc8;}
+main{padding:2rem;}
+.hero{ display: flex; flex-direction: column; align-items: center; text-align: center; text-align:center; padding:5rem 2rem; background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat; color:#fff; border-radius:20px; margin-bottom:2rem;}
+.hero h1{font-size:2.8rem;}
+.cta-button{display:inline-block;margin-top:1.5rem;padding:.75rem 1.5rem;background:#00ffc8;color:#000;border-radius:12px;transition:transform .3s;}
+.cta-button:hover{transform:scale(1.05);}
+.scroll-reveal{opacity:0;transform:translateY(30px);transition:all .6s ease-out;}
+.scroll-reveal.revealed{opacity:1;transform:translateY(0);}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
+.card{background:rgba(255,255,255,0.08);padding:2rem;border-radius:16px;box-shadow:0 4px 10px rgba(0,0,0,0.3);transition:transform .3s;}
+.card:hover{transform:translateY(-5px);}
+.testimonials{margin:6rem 0;}
+.testimonials h2{font-size:2.4rem;text-align:center;margin-bottom:1rem;}
+.divider span{color:#00ffc8;font-size:1.5rem;}
+.testimonials-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;}
+.testimonial-card{position: relative;background:rgba(255,255,255,0.08);padding:1.5rem;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,0.4);transition:transform .3s,box-shadow .3s;}
+.testimonial-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 8px 20px rgba(0,0,0,0.6);}
+.meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;}
+.author-img{border-radius:50%;width:40px;height:40px;}
+.stars{color:#ffd700;margin-bottom:1rem;}
+.verified{color:#00ffc8;position: absolute;
+  top: 1rem;     /* чуть ниже верхнего края карточки */
+  right: 1rem;   /* отступ от правого края */
+  color: #00ffc8;
+  font-size: .8rem;
+  text-transform: uppercase;
+  margin: 0;     /* убираем margin-top */}
+.attachments{display:flex;gap:.5rem;margin-top:.75rem;}
+.thumb-icon{width:40px;height:40px;object-fit:cover;cursor:pointer;border-radius:4px;}
+.lightbox-overlay{position:fixed;display:none;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:10000;}
+.lightbox-overlay.active{display:flex;}
+.lightbox-overlay img{max-width:80%;max-height:80%;border-radius:8px;}
+.lightbox-overlay .close-btn{position:absolute;top:20px;right:20px;font-size:2rem;color:#fff;cursor:pointer;}
+footer{text-align:center;padding:1.5rem;background:rgba(0,0,0,0.3);}
+
+.lightbox-prev, .lightbox-next {
+  position: fixed;
+  top: 50%;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10001;
+  padding: 0 1rem;
+  transform: translateY(-50%);
+}
+.lightbox-prev { left: 10%; }
+.lightbox-next { right: 10%; }
+
+
+.testimonials-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+.testimonial-card {
+  flex: 0 0 240px;
+  scroll-snap-align: start;
+}
+/* Убираем старый clamp */
+.testimonial-card p.quote {
+  /* удалите или закомментируйте эти строки: */
+  /* display: -webkit-box; */
+  /* -webkit-line-clamp: 5; */
+  /* -webkit-box-orient: vertical; */
+  /* overflow: hidden; */
+
+  /* вместо этого: */
+  display: block;
+  max-height: 10rem;        /* подберите высоту, в которой умещается 3–4 строки меты и звёзд */
+  overflow-y: auto;         /* включаем вертикальную прокрутку */
+  padding-right: 0.5rem;    /* чтобы скролл “не цеплялся” за край */
+}
+
+/* Чтобы карточка не обрезалась по высоте: */
+.testimonials-container {
+  overflow-x: auto;   /* горизонтальный скролл как раньше */
+  overflow-y: visible;/* позволяем quote “высовываться” вниз */
+}
+.testimonial-card p.quote::-webkit-scrollbar {
+  width: 6px;
+}
+.testimonial-card p.quote::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+}
+.testimonial-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-btn { background: rgba(0, 0, 0, 0.5);border: none;color: #fff;font-size: 2rem;width: 2.5rem;height: 2.5rem;border-radius: 50%; cursor: pointer;z-index: 10;transition: background .2s;}
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.testimonials-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  overflow-x: auto;        /* включаем прокрутку */
+  scroll-snap-type: x mandatory;
+
+  /* Скрываем полосу */
+  scrollbar-width: none;    /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.testimonials-container::-webkit-scrollbar {
+  display: none;            /* Chrome/Safari */
+}
+/* В конец styles.css */
+.hero .features {
+  list-style: none;         /* убираем маркеры по умолчанию */
+  padding: 0;
+  margin: 1.5rem auto;      /* авто-отступ по бокам центрирует блок */
+  display: inline-block;    /* «сжимаем» контейнер по ширине контента */
+  text-align: left;         /* текст внутри читается слева */
+}
+
+.hero .features li {
+  margin-bottom: 0.75rem;   /* отступ между строками */
+}
+
+.hero .features li::before {
+  content: '✔️ ';           /* галочка сразу перед текстом */
+}
+
+/* Centered vertical list in Hero */
+.hero .features {
+  display: table;
+  margin: 1.5rem auto;
+  text-align: left;
+}
+.hero .features li {
+  margin: 0.5rem 0;
+}
+.hero .features li::before {
+  content: "✔️ ";
+}
+/* Focus outline on testimonial cards */
+.testimonial-card:focus {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 4px;
+}
+
+/* Carousel buttons wrapper */
+.testimonial-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+/* Hide native scrollbar */
+.testimonials-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.testimonials-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Styles for service lists in cards */
+.cards .card ul {
+  list-style: disc;
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+.cards .card ul li {
+  margin-bottom: 0.5rem;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-self: end;
 }
 
 .header-left, .header-right {
@@ -290,30 +3010,7 @@ footer{text-align:center;padding:1.5rem;background:rgba(0,0,0,0.3);}
     overflow-x: auto;
   }
 }
-.contact-info a {
-  margin-left: 0.5rem;
-  color: #fff;
-  font-size: 1rem;    /* стало меньше */
-  padding: 0.1rem;    /* уменьшён padding */
-  text-decoration: none;
-  transition: color 0.3s, transform 0.2s;
-}
 
-
-/* Header improvements per six-point spec */
-.header-bar {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 0 2rem;
-  height: 80px;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
 .header-left, .header-right { display: flex; align-items: center; gap: 0.5rem; }
 .follow-label { color: #89ecda; font-weight:600; font-size:0.9rem; }
 .icon-btn img { width:24px; height:24px; transition: transform .2s, filter .2s; }
@@ -2758,7 +5455,7 @@ section {
 }
 
 .logo {
-  height: 140px;
+  height: 80px;
 }
 
 main {
