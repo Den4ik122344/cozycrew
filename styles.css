@@ -2604,8 +2604,16 @@ display: grid
   background: rgba(0,0,0,0.7);
   justify-content: center;
   align-items: center;
-  padding-bottom: 2rem;
+  padding: 2rem;
   z-index: 10000;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.modal.show {
+  display: flex !important; /* Changed from block to flex */
+  opacity: 1;
+  transform: scale(1);
 }
 .modal-content {
   background: #fff;
@@ -2700,25 +2708,6 @@ display: grid
 }
 
 /* ===== Modal Centering, Animation & Styling Improvements ===== */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  z-index: 10000;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.modal.show {
-  display: flex !important;
-  opacity: 1;
-  transform: scale(1);
-}
-
 .modal-content {
   max-width: 600px;
   width: 90%;
@@ -2730,7 +2719,6 @@ display: grid
   box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
   position: relative !important;
 }
-
 .modal-content h2 {
   font-size: 1.75rem !important;
   text-align: center !important;
@@ -2894,6 +2882,7 @@ section, main, .hero, .booking-card, .modal-content, .gallery, .promo-banner {
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+  font-size: 1vw;
 }
 
 @media (max-width: 768px) {
