@@ -1797,7 +1797,7 @@ display: grid
 }
 .hero .booking-card {
   display: block !important;
-  flex: 0 0 320px !important;
+  flex: 0 0 370px !important;
   background: rgba(255,255,255,0.08) !important;
   border: 1px solid rgba(255,255,255,0.2) !important;
   padding: 1.5rem !important;
@@ -2882,7 +2882,6 @@ section, main, .hero, .booking-card, .modal-content, .gallery, .promo-banner {
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
-  font-size: 1vw;
 }
 
 @media (max-width: 768px) {
@@ -3131,7 +3130,7 @@ section, main, .hero, .booking-card, .modal-content, .gallery, .promo-banner {
     padding: 1rem !important;
     max-width: 98vw !important;
     border-radius: 10px !important;
-    font-size: 1rem !important;
+    font-size: 2vw !important;
   }
   .modal-content h2 {
     font-size: 1.2rem !important;
@@ -3171,6 +3170,7 @@ section, main, .hero, .booking-card, .modal-content, .gallery, .promo-banner {
     min-width: 0 !important;
     max-width: 100vw !important;
     box-sizing: border-box;
+    z-index: 500;
   }
   #services-section .card::after {
     left: 50% !important;
