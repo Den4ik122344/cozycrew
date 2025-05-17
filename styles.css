@@ -340,7 +340,7 @@ display: grid
     background: rgba(0,0,0,0.7);
     backdrop-filter: blur(8px);
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
     justify-content: space-between;
@@ -356,7 +356,7 @@ display: grid
 }
 
 .header-left, .header-right { display: flex; align-items: center; gap: 0.5rem; }
-.follow-label { color: #89ecda; font-weight:600; font-size:2.2vw; }
+.follow-label { color: #89ecda; font-weight:600; font-size:1.2vw; }
 .icon-btn img { width:24px; height:24px; transition: transform .2s, filter .2s; }
 .icon-btn:hover img { transform: scale(1.1); filter: brightness(1.2); }
 .contact-info { display:flex; align-items:center; padding: 1vw;}
@@ -1865,7 +1865,7 @@ display: grid
 }
 
 .booking-form input, .booking-form textarea {
-  width: 100%;
+  width: 93%;
   background: rgba(0,0,0,0.6);
   color: #ffffff;
   border: 1px solid rgba(255,255,255,0.3);
@@ -2331,6 +2331,7 @@ display: grid
   grid-template-columns: repeat(2, auto);
   gap: 0.75rem 2rem;
   line-height: 1.6;
+  margin-top: 4vw;
 }
 
 /* 5. Плавные эффекты при наведении */
@@ -2512,7 +2513,7 @@ display: grid
   transform: translateX(-50%) !important;
   
   /* делаем шире и многострочно */
-  width: 90% !important;
+  width: 93% !important;
   white-space: pre-wrap !important;
   word-break: break-word !important;
   
@@ -2799,7 +2800,6 @@ display: grid
       z-index: 1000;
       justify-content: center;
       align-items: center;
-
   }
 
   #burger-toggle:checked ~ .header-right {
@@ -2816,6 +2816,7 @@ display: grid
     cursor: pointer;
     z-index: 1001;
     transition: transform 0.3s ease; /* Додаємо плавний перехід */
+    padding-right: 5vw;
   }
 
   .burger-icon span {
