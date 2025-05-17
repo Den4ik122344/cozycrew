@@ -34,11 +34,6 @@
     </div>
     <a href="index.html" class="logo-link" aria-label="Homepage"><img src="images/logo.jpg" alt="CozyCrew Logo" class="logo" loading="lazy" /></a>
     <input type="checkbox" id="burger-toggle" class="visually-hidden">
-    <label for="burger-toggle" class="burger-icon" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
     <nav class="header-right" role="navigation">
       <ul class="nav">
         <li><a href="index.html" class="active">Home</a></li>
@@ -46,10 +41,13 @@
         <li><a href="#about-us">About Us</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
-    <div id="menu-overlay"></div>
+    </nav> 
+    <label for="burger-toggle" class="burger-icon" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>   
   </header>
-  <main style="margin-left:2rem;">
     <section id="home" class="hero scroll-reveal">
       <div class="hero-inner">
         <div class="booking-card">
@@ -219,7 +217,7 @@
     </section>
     <section class="scroll-reveal" id="services-section">
       <h2 class="section-title" style="text-align: center; color: #ffd700!important;">Our Services</h2>
-      <div style="display: flex; justify-content: space-between; gap: 2rem;">
+      <div style="display: block; max-width: 1000px; justify-content: space-between; gap: 2rem;">
         <div style="flex: 1;">
           <h3 style="text-align: center;">HANDYMAN</h3>
           <div class="cards" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
